@@ -30,7 +30,7 @@ class AjaxController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,10 +42,10 @@ class AjaxController extends Controller
 
                 $client = new QwantClient('en_US');
                 $results = $client->images($request['string']);
-                if($results['status'] == 'success'){
+                if ($results['status'] == 'success') {
                     $img = $results['data']['result']['items'][0]['data'][0]['images'][$request['count']]['media'];
                     return response()->json(array('status' => true, 'img' => $img), 200);
-                }else{
+                } else {
                     return response()->json(array('status' => false), 404);
                 }
 
@@ -57,7 +57,7 @@ class AjaxController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +68,7 @@ class AjaxController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +79,8 @@ class AjaxController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +91,7 @@ class AjaxController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
