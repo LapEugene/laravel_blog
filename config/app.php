@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        'Backpack\NewsCRUD\NewsCRUDServiceProvider',
 
         /*
          * Application Service Providers...
