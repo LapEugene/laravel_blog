@@ -8,9 +8,9 @@
             <div class="col-lg-12">
 
                 <hr>
-                <h2 class="text-center">{{$article->name}}
+                <h2 class="text-center">{{$article->title}}
                     <br>
-                    <small>{{$article->created_at}}</small>
+                    <small>{{$article->date}}</small>
                 </h2>
 
                 <br>
