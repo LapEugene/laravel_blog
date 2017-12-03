@@ -9,6 +9,7 @@
         "backpack/base": "^0.8.3",
         "backpack/newscrud": "^2.1",
         "fideloper/proxy": "~3.3",
+        "filippo-toso/qwant-unofficial-api": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"
     },

@@ -22,3 +22,7 @@ Route::get('/articles', [
 Route::get('/article/{id}', [
     'uses' => 'ArticleController@show'
 ]);
+
+Route::post('ajax', [
+    'as' => 'ajax', 'uses' => 'AjaxController@store'
+]);
