@@ -41,9 +41,14 @@ class AjaxController extends Controller
             case 'upload_photo':
 
                 $client = new QwantClient('en_US');
-                $results = $client->images('cars');
+                $results = $client->images($request['string']);
+                if($results['status'] == 'success'){
+                    $img = $results['data']['result']['items'][0]['data'][0]['images'][$request['count']]['media'];
+                    return response()->json(array('status' => true, 'img' => $img), 200);
+                }else{
+                    return response()->json(array('status' => false), 404);
+                }
 
-                return response()->json(array('status' => true, 'img' => $results), 200);
             default:
                 break;
         }

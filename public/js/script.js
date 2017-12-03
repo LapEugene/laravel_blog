@@ -7,7 +7,7 @@ $.ajaxSetup({
 $(function(){
     var count = 0;
     $('body').on('click', '#search',  function () {
-        count++;
+
         var $self = $(this);
         var formData = new FormData();
         formData.append('string', $self.data('string'));
@@ -24,12 +24,12 @@ $(function(){
             'data': formData
         }).done(function (resp) {
             if (resp.status == true){
-                console.log(resp.img.data.result.items[0].data[count].media);
                 console.log(resp.img);
                 console.log(count);
                 $('#searchingImg').find('img').attr('src', resp.img);
             }
         });
+        count++;
     });
     $('body').on('click', '#insert',  function () {
         var $self = $(this);
