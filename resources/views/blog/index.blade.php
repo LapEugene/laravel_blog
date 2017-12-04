@@ -9,7 +9,7 @@
                     <h2></h2>
                 </article>
                 <div class="col-lg-12 text-center">
-                    <h2>{{$article->name}}
+                    <h2>{{$article->title}}
                         <br>
                         <small>{{$article->created_at}}</small>
                     </h2>
