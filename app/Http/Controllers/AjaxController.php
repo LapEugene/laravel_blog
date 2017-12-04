@@ -43,7 +43,13 @@ class AjaxController extends Controller
                 $client = new QwantClient('en_US');
                 $results = $client->images($request['string']);
                 if ($results['status'] == 'success') {
-                    $img = $results['data']['result']['items'][0]['data'][0]['images'][$request['count']]['media'];
+                    $img = $results['data']['result']['items'][0]['data'][0];
+                    if (array_key_exists('images', $img)) {
+                        $img = $img['images'][$request['count']]['media'];
+                    } else {
+                        $img = $img['media'];
+                    }
+
                     return response()->json(array('status' => true, 'img' => $img), 200);
                 } else {
                     return response()->json(array('status' => false), 404);
